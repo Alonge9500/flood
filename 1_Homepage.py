@@ -98,10 +98,11 @@ st.markdown("""
             + Use a generator or other gasoline-powered machinery ONLY outdoors and away from windows.""")
 
 with st.sidebar:
-    st.title("Markdown Links")
+    st.title("Flood Helpful Tips")
 
     # Create a list of all the markdown links
-    markdown_links = [f"[If you are under a flood warning](/#disaster-and-emergencies-a-case-study-of-flood)",
+    markdown_links = [f"[Report A Flood Case](/Report_a_Flood_Case)",
+                      "[If you are under a flood warning](/#disaster-and-emergencies-a-case-study-of-flood)",
                       "[Prparing For a Flood](/#preparing-for-a-flood)",
                       "[Staying Safe During A Flood](/#staying-safe-during-a-flood)",
                       "[Staying Safe During A Flood](/#staying-safe-during-a-flood)",
@@ -110,7 +111,7 @@ with st.sidebar:
 
     # Use the `st.markdown()` function to display the list of links
     for markdown_link in markdown_links:
-        st.markdown(markdown_link, unsafe_allow_html=False)
+        st.markdown(markdown_link, unsafe_allow_html=True)
         
 
 st.markdown("[Report A Flood Case](/Report_a_Flood_Case)")
