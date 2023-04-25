@@ -1,7 +1,6 @@
 import streamlit as st
 import os
 from PIL import Image
-from streamlit_javascript import st_javascript
 
 
 
@@ -12,16 +11,14 @@ st.set_page_config(page_title='FLOOD',
                    layout='centered'
                    )
 
-url = st_javascript("await fetch('').then(r => window.parent.location.href)")
-
-st.write(url)
 image_path = os.path.join(os.getcwd(), 'flood.png')
 image = Image.open(image_path)
 
 st.title('Disaster and Emergencies (A Case Study of Flood)')
+
 st.markdown("""
             Flooding is a temporary overflow of water onto land that is normally dry. Floods are the most common natural disaster in the United States. Failing to evacuate flooded areas or entering flood waters can lead to injury or death.
-
+[Report A Flood Case](/Report_a_Flood_Case)
 Floods may:
 
 Result from rain, snow, coastal storms, storm surges and overflows of dams and other water systems.
@@ -104,8 +101,16 @@ with st.sidebar:
     st.title("Markdown Links")
 
     # Create a list of all the markdown links
-    markdown_links = ["This is a link to the first markdown", "This is a link to the second markdown", "This is a link to the third markdown"]
+    markdown_links = [f"[If you are under a flood warning](/#disaster-and-emergencies-a-case-study-of-flood)",
+                      "[Prparing For a Flood](/#preparing-for-a-flood)",
+                      "[Staying Safe During A Flood](/#staying-safe-during-a-flood)",
+                      "[Staying Safe During A Flood](/#staying-safe-during-a-flood)",
+                      "[Staying Safe After a Flood](/#staying-safe-after-a-flood)"]
+    
 
     # Use the `st.markdown()` function to display the list of links
     for markdown_link in markdown_links:
-        st.markdown(markdown_link, unsafe_allow_html=True)
+        st.markdown(markdown_link, unsafe_allow_html=False)
+        
+
+st.markdown("[Report A Flood Case](/Report_a_Flood_Case)")
